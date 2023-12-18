@@ -35,7 +35,7 @@ if ! command -v ngrok &> /dev/null; then
     wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
     unzip ngrok-v3-stable-linux-amd64.tgz
     mv ngrok /usr/local/bin/
-    rm ngrok-stable-linux-amd64.zip
+    rm ngrok-v3-stable-linux-amd64.tgz
 fi
 
 # Prompt user for ngrok authtoken
