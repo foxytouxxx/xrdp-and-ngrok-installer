@@ -20,4 +20,14 @@ This script automates the installation of XRDP (X Remote Desktop Protocol) and N
 
    ```bash
    git clone https://github.com/foxytouxxx/xrdp-and-ngrok-installer
+   ```
+2. Go to the folder:
+   ```bash
+   cd xrdp-and-ngrok-installer
+   ```
+3. Launch the script:   
+   ```bash
+   bash ./script.sh
+   ```
+- This repository is licensed, if you want to make a video about it or if you want to use it, dm foxytoux on discord
    
