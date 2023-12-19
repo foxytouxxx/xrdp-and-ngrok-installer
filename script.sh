@@ -48,7 +48,5 @@ read -p "Enter your ngrok authtoken: " authtoken
 # Start xrdp on port 3389
 systemctl start xrdp
 
-# Launch ngrok with --no-check-certificate option
+# Launch ngrok
 ./ngrok tcp 3389
-
-echo "xrdp and ngrok installation completed successfully. You can now connect to your machine using an RDP client on port 3389."
