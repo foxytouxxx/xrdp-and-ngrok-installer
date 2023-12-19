@@ -49,11 +49,8 @@ fi
 # Prompt user for ngrok authtoken
 read -p "Enter your ngrok authtoken: " authtoken
 
-# Set ngrok authtoken
-./ngrok authtoken "$authtoken"
+# Set ngrok authtoken and launch ngrok in the background
+./ngrok authtoken "$authtoken" && ./ngrok tcp 3389 &
 
-# Start xrdp on port 3389
-xrdp
-
-# Launch ngrok with --no-check-certificate option
-./ngrok tcp 3389
+# Start xrdp in the background
+xrdp &
