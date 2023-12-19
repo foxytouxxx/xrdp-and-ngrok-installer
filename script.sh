@@ -53,7 +53,7 @@ read -p "Enter your ngrok authtoken: " authtoken
 ./ngrok authtoken "$authtoken"
 
 # Start xrdp on port 3389
-systemctl start xrdp
+xrdp
 
 # Launch ngrok with --no-check-certificate option
 ./ngrok tcp 3389
