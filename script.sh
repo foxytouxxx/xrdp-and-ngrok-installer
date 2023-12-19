@@ -22,8 +22,15 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Display a warning and prompt for confirmation
-echo "This script will install xrdp and ngrok, and launch xrdp on port 3389."
+echo "This script will install xrdp, ngrok, change the root password, and launch xrdp on port 3389."
 prompt_confirmation "Do you want to continue?"
+
+# Prompt user for root password
+read -s -p "Enter the new root password: " root_password
+echo
+
+# Change root password
+echo "root:$root_password" | chpasswd
 
 # Install xrdp
 apt-get update
@@ -48,5 +55,5 @@ read -p "Enter your ngrok authtoken: " authtoken
 # Start xrdp on port 3389
 systemctl start xrdp
 
-# Launch ngrok
+# Launch ngrok with --no-check-certificate option
 ./ngrok tcp 3389
