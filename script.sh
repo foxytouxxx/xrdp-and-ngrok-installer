@@ -32,7 +32,7 @@ apt-get install -y xrdp
 # Check if ngrok is already present
 if ! command -v ngrok &> /dev/null; then
     prompt_confirmation "Ngrok is not installed. Do you want to download it?"
-    
+
     # Download and extract ngrok with --no-check-certificate option
     wget --no-check-certificate https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
     tar -xzf ngrok-v3-stable-linux-amd64.tgz
@@ -42,8 +42,8 @@ fi
 # Prompt user for ngrok authtoken
 read -p "Enter your ngrok authtoken: " authtoken
 
-# Save ngrok authtoken to configuration file
-echo "authtoken: $authtoken" > ~/.ngrok2/ngrok.yml
+# Set ngrok authtoken
+./ngrok authtoken "$authtoken"
 
 # Start xrdp on port 3389
 systemctl start xrdp
